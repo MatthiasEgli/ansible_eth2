@@ -10,7 +10,7 @@ For now, you can git-submodule this repository, and add the `roles` as source fo
 
 ## Usage
 
-- `machine`: common setup things for a new machine, installing required things for other roles
+- `machine`: common setup things for a nepublw machine, installing required things for other roles
 - `ubuntu`: common ubuntu os settings (TODO: hardening)
 - `eth2client`: 
     - defines validator assignments
@@ -28,6 +28,20 @@ For now, you can git-submodule this repository, and add the `roles` as source fo
 - `val_tools`: Build deposits, execute deposits. 
 
 The `val_tools` and `deposit_contract` roles assume [`ethereal`](https://github.com/wealdtech/ethereal/) is installed.
+
+## Local testnet provisioning
+
+To start a local testnet provisioning is provided using `vagrant`. Please install `vagrant` first on your local machine.
+
+To setup your own testnet, execute these commands from the root folder of this repository:
+
+```
+# Setup and provision virtual machines (requires vagrant to be installed)
+vagrant up
+
+# To retry provisioning after the VMs are up, use
+vagrant provision
+```
 
 ## License
 

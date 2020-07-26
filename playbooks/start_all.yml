@@ -1,19 +1,16 @@
 ---
-- name: Start beacon node, validator, eth2stats
+- name: Start beacon node
   hosts:
     - beacon_node
-  roles:
-    - machine
-    - validator
-    - beacon
-    - eth2stats
   gather_facts: true
   tasks:
+    - name: Setup node
+      import_role:
+        name: machine
+        tasks_from: setup
+      become: yes
     - name: Setup beacon node
-      include_tasks: roles/eth2client/tasks/start-beacon-app.yml
-    - name: Setup validator client
-      include_tasks: roles/eth2client/tasks/start-validator-app.yml
-      when: validator_enabled
-    - name: Setup eth2stats
-      include_tasks: roles/eth2stats/tasks/start-eth2stats.yml
-      when: eth2stats_enabled
+      import_role:
+        name: eth2client
+        defaults_from: lighthouse
+        tasks_from: start-beacon
