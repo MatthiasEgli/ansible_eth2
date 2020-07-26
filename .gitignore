@@ -1,0 +1,10 @@
+# ansible-galaxy imported roles
+roles/geerlingguy.docker
+roles/geerlingguy.swap
+
+# user-specific files
+inventory
+
+# vagrant local testnet
+.vagrant
+ubuntu-bionic-18.04-cloudimg-console.log
