@@ -1,0 +1,3 @@
+[submodule "public-attacknets"]
+	path = public-attacknets
+	url = git@github.com:ethereum/public-attacknets.git
